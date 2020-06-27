@@ -1,0 +1,21 @@
+<div class="photo-grid">
+    <figure *ngFor="let photo of photos" class="grid-figure">
+        <div class="grid-photo-wrap">
+                <img src={{photo.display_src}} alt={{photo.caption}} class="grid-photo" />
+        </div>
+        <figcaption>
+            <div class="control-buttons">
+                <button class="likes">
+                    &hearts; {{photo.likes}}
+                </button>
+                <button class="button">
+                    <span class="comment-count">
+                        <span class="speech-bubble"></span>
+                        20
+                    </span>
+                </button>
+            </div>
+            <p>{{photo.caption}}</p>
+        </figcaption>
+    </figure>
+</div>
