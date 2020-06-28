@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN npm install -g @angular/cli
 RUN npm install
-RUN ng build --base-href /
+RUN ng build --prod --base-href /
 
 #Serve static files via NGINX
 FROM nginx:alpine

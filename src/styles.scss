@@ -1,3 +1,38 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$jempol-primary: mat-palette($mat-indigo);
+$jempol-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$jempol-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$jempol-theme: mat-light-theme((
+  color: (
+    primary: $jempol-primary,
+    accent: $jempol-accent,
+    warn: $jempol-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($jempol-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import '~normalize-scss';
 @import '_typography.scss';
@@ -18,10 +53,7 @@ body {
   flex-grow: 1;
   flex-shrink: 0;
   margin: 0 2rem 2rem 2rem;
-  padding: 2rem;
-  border: 1px solid lightgray;
   background: white;
-  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.03);
   position: relative;
 }
 
@@ -48,6 +80,15 @@ body {
     width: 100%;
     margin: 0;
   }
+}
+
+.photo-caption {
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 3.5em;
+  line-height: 1em;
 }
 
 .grid-photo {
@@ -100,18 +141,6 @@ body {
   position: relative;
 }
 
-.likes-heart {
-  background: url(https://res.cloudinary.com/asiksehat/image/upload/v1550274820/heart.png) center no-repeat;
-  background-size: contain;
-  font-size: 2rem;
-  padding: 1rem;
-  position: absolute;
-  color: red;
-  left: 50%;
-  top: 50%;
-  pointer-events: none;
-}
-
 /*  
   Buttons  
 */
@@ -137,31 +166,6 @@ button, .button {
   &:hover, &:focus {
     border-color: red;
     outline: 0;
-  }
-}
-
-/*
-  Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons.
-*/
-.speech-bubble {
-  $size: 1.25rem;
-  width: $size * 1.2;
-  height: $size;
-  background: red;
-  display: inline-block;
-  border-radius: 50%;
-  position: relative;
-  &:after {
-    display: inline-block;
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 $size $size 0;
-    border-color: transparent red transparent transparent;
-    top: 30%;
-    left: 0;
   }
 }
 
@@ -201,3 +205,6 @@ button, .button {
     }
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

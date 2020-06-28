@@ -1,21 +1,18 @@
 <div class="photo-grid">
     <figure *ngFor="let photo of photos" class="grid-figure">
-        <div class="grid-photo-wrap">
-                <img src={{photo.display_src}} alt={{photo.caption}} class="grid-photo" />
-        </div>
-        <figcaption>
-            <div class="control-buttons">
-                <button class="likes">
-                    &hearts; {{photo.likes}}
+        <mat-card class="mat-elevation-z4">
+            <img mat-card-image src={{photo.display_src}} alt={{photo.caption}} />
+            <mat-card-content class="photo-caption">
+                <p>{{photo.caption}}</p>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-stroked-button class="button">
+                    <span class="material-icons">thumb_up</span>&nbsp;{{photo.likes}}
+                </button> 
+                <button mat-stroked-button class="button">
+                    <span class="material-icons">thumb_down</span>&nbsp;{{photo.boos}}
                 </button>
-                <button class="button">
-                    <span class="comment-count">
-                        <span class="speech-bubble"></span>
-                        20
-                    </span>
-                </button>
-            </div>
-            <p>{{photo.caption}}</p>
-        </figcaption>
+            </mat-card-actions>
+        </mat-card>
     </figure>
 </div>
