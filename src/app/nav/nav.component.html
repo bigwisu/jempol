@@ -1,0 +1,31 @@
+<div class="navbar-container">
+    <div class="flex-container" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-icon-button class="button" fxFlex="nogrow">
+        <span class="material-icons">search</span>
+      </button>            
+      <button mat-icon-button class="button" fxFlex="nogrow">
+        <span class="material-icons">trending_up</span>
+      </button>     
+      <button mat-icon-button class="button" fxFlex="nogrow">
+        <span class="material-icons">thumb_up</span>
+      </button>
+      <ng-template [ngIf]="isSignedIn()">
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <img src="{{userDetail.imageUrl}}" class="avatar">
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>{{ userDetail.name }}</button>
+                <button mat-menu-item (click)="signOut()">Sign Out</button>
+            </mat-menu>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="!isSignedIn()">
+        <div>
+            <button mat-icon-button (click)="authenticate()" class="button" fxFlex="nogrow">
+                <span class="material-icons">person</span>
+            </button>
+        </div>
+      </ng-template>
+    </div>
+</div>

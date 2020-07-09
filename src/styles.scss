@@ -52,7 +52,7 @@ body {
   flex-basis: calc(28% - 4rem);
   flex-grow: 1;
   flex-shrink: 0;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 1rem 2rem 1rem;
   background: white;
   position: relative;
 }
@@ -103,7 +103,7 @@ body {
   line-height: 1;
   opacity: 0;
   &:hover {
-    color: red;
+    color: #bd0610;
   }
 }
 
@@ -115,7 +115,7 @@ body {
     margin: 0;
   }
   strong {
-    color: red;
+    color: #bd0610;
     margin-right: 5px;
   }
   &:hover {
@@ -160,11 +160,11 @@ button, .button {
   padding: 5px;
   text-align: center;
   font-size: 15px;
-  color: red;
+  color: #bd0610;
   transition: all 0.2s;
   box-sizing: padding-box;
   &:hover, &:focus {
-    border-color: red;
+    color: #bd0610;
     outline: 0;
   }
 }
@@ -178,6 +178,7 @@ button, .button {
 @media (max-width: 500px) {
   .grid-figure {
     flex-basis: calc(100% - 8rem);
+    margin: 0 0 2rem 0;
   }
 
   .single-photo {

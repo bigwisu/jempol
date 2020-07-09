@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Component({
   selector: 'app-root',

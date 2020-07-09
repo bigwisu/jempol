@@ -1,4 +1,4 @@
-import { Photo } from './photo';
+import { Photo } from './interfaces';
 
 export const PHOTOS: Photo[] = [
     {
