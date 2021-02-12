@@ -37,10 +37,6 @@ $jempol-theme: mat-light-theme((
 @import '~normalize-scss';
 @import '_typography.scss';
 
-body {
-  background: offwhite;
-}
-
 .photo-grid {
   display: flex;
   flex-wrap: wrap;
@@ -207,5 +203,12 @@ button, .button {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  background: offwhite;
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
