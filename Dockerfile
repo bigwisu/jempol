@@ -1,7 +1,7 @@
 FROM node as builder
 WORKDIR /app
 COPY . .
-RUN npm install -g @angular/cli@10.0.0
+RUN npm install -g @angular/cli@11.2.0
 RUN npm install
 RUN ng build --prod --base-href /
 
